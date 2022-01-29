@@ -1,6 +1,24 @@
 # testeSelecty-fullstackphp
 Teste técnico – Fullstack PHP - 20220129
 
+# Comandos necessários para a execução do projeto
+- Clonar o projeto
+git clone https://github.com/SamirSouzaSys/testeSelecty-fullstackphp.git
+
+Vá para a pasta do projeto
+- cd testeSelecty-fullstackphp
+- composer update
+- npm install
+
+Agora em 2 "terminais diferentes e ao mesmo tempo" 
+- npm run watch
+- php artisan serve
+
+
+Database
+- Na pasta database/dump...
+-------------------------
+
 # Requisitos dispensáveis:
 • Não será necessário efetuar autenticação do usuário.
 • A qualidade do layout não será levada em consideração, apenas as funcionalidades.
@@ -93,6 +111,21 @@ TelaHome(usuario/index)
                 |-> Botão (formacaoAcademica/delete)
   
 ------------------
+Back
+* usuário       C RD
+* Formações     
+* Experiências  
+
+Front
+* usuário       C RD
+* Formações     
+* Experiências  
+
+Front Tratamento
+* usuário       C* R*
+* Formações     
+* Experiências  
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

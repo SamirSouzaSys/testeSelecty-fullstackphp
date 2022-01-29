@@ -33,7 +33,7 @@
           <td>{{ usuario.updated_at }}</td>
           <td>
             <div class="btn-group" role="group">
-              <button class="btn btn-danger" @click="deleteAutor(usuario.id)">
+              <button class="btn btn-danger" @click="deleteUsuario(usuario.id)">
                 Apagar
               </button>
               <router-link
@@ -46,14 +46,11 @@
           </td>
         </tr>
       </tbody>
+      <tfoot>
+        * observação - exibida devido a ser um sistema de aprendizado
+      </tfoot>
     </table>
     <hr />
-    <router-link
-      :to="{ name: 'usuario/add', params: { id: usuario.id } }"
-      class="btn btn-primary"
-    >
-      Detalhes
-    </router-link>
   </div>
 </template>
  
@@ -61,14 +58,23 @@
 export default {
   data() {
     return {
-      usuarios: []
+      usuarios: [],
     };
   },
   created() {
     this.axios.get("http://localhost:8000/api/usuario").then((response) => {
       this.usuarios = response.data;
     });
-
+  },
+  methods: {
+    deleteUsuario(id) {
+      this.axios
+        .delete(`http://localhost:8000/api/usuario/delete/${id}`)
+        .then((response) => {
+          let i = this.usuarios.map((item) => item.id).indexOf(id); // find index of your object
+          this.usuarios.splice(i, 1);
+        });
+    },
   },
 };
 </script>

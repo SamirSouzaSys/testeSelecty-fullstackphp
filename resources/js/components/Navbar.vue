@@ -19,7 +19,7 @@
             <router-link to="/" class="nav-item nav-link">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/addUsuario" class="nav-item nav-link">Add Usuário</router-link>
+            <router-link to="/usuario/add" class="nav-item nav-link">Add Usuário</router-link>
           </li>
         </ul>
         <form class="d-flex">
