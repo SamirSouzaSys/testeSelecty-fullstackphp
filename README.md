@@ -43,7 +43,12 @@ npm install
 npm install vue
 npm install vue-router vue-axios --save
 npm install bootstrap @popperjs/core --save-dev
+npm install bootstrap-vue
+npm install jquery
 npm install --save-dev "@tinymce/tinymce-vue@^3"
+npm install vue-template-compiler vue-loader@^15.9.7 --save-dev --legacy-peer-deps
+npm install resolve-url-loader@^5.0.0 --save-dev --legacy-peer-deps
+npm install
 
 git add .
 git commit -m "organizando o ambiente"
@@ -62,6 +67,10 @@ php artisan make:model FormacaoAcademica -m
 php artisan migrate --path=/database/migrations/2022_01_29_160159_create_formacao_academicas_table.php
 php artisan make:controller API/FormacaoAcademicaController
 
+npm run dev
+npm run watch
+
+
 ------------------
 Banco de dados
 Tabelas
@@ -70,6 +79,7 @@ Tabelas
 *FormacaoAcademica(idUsuario)
 
 TelaHome(usuario/index)
+  -> Botão -> Tela-Usuário.Adicionar -> (usuario/add)
   |-> Botão (usuario/delete)
   -> Botão -> Tela-Usuário.Editar (usuario/edit/id) -> (usuario/update/id)
   -> Botão -> Tela-UsuárioDetalhes
@@ -82,7 +92,6 @@ TelaHome(usuario/index)
                 -> Botão -> Tela-FormaçãoAcadêmica.Editar(formacaoAcademica/Edit) -> (formacaoAcademica/id)
                 |-> Botão (formacaoAcademica/delete)
   
-  -> Botão -> Tela-Usuário.Adicionar -> (usuario/add)
 ------------------
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

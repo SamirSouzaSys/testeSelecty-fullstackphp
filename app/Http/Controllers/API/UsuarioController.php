@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\ExperienciaProfissional;
+use App\Models\FormacaoAcademica;
 use App\Models\Usuario;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -12,10 +15,27 @@ class UsuarioController extends Controller
     {
         $usuarios = Usuario::all()->toArray();
 
-        // foreach ($autors as $key => $value) {
-        //     $autors[$key]['postsTotal'] = Post::where('autor_id', $value['id'])->count();
-        // }
+        //TODO Aqui deve ser melhorado com algo semelhante ao WithCount
+        foreach ($usuarios as $key => $value) {
+            $usuarios[$key]['formacoesTotal'] = FormacaoAcademica::where('usuario_id',$value['id'])->count();
+        }
+
+        //TODO Aqui deve ser melhorado com algo semelhante ao WithCount
+        foreach ($usuarios as $key => $value) {
+            $usuarios[$key]['ExperienciasTotal'] = ExperienciaProfissional::where('usuario_id',$value['id'])->count();
+        }
         return $usuarios;
+
+
+        // SELECT *,
+        // ( select count(*) FROM `formacao_academicas`
+        //     where usuario_id = usuarios.id
+        // ) as formacoesTotal,
+        // ( select count(*) FROM `experiencia_profissionals`
+        //     where usuario_id = usuarios.id
+        // ) as ExperienciasTotal
+        // FROM `testeSelecty-fullstackphp-DB`.usuarios;
+
     }
 
     // add autor
