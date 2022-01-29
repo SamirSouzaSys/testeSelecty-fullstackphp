@@ -35,9 +35,32 @@ Etapa 3
 
 __________________
 
-Comandos usandos durante o desenvolvimento
+# Comandos usandos durante o desenvolvimento
+git clone https://github.com/SamirSouzaSys/testeSelecty-fullstackphp.git
+composer create-project  laravel/laravel .
+
+npm install
+npm install vue
+npm install vue-router vue-axios --save
+npm install bootstrap @popperjs/core --save-dev
+npm install --save-dev "@tinymce/tinymce-vue@^3"
+
+git add .
+git commit -m "organizando o ambiente"
+
+CREATE SCHEMA `testeSelecty-fullstackphp-DB` DEFAULT CHARACTER SET utf8 ;
+
+php artisan make:model Usuario -m
+php artisan migrate --path=/database/migrations/2022_01_29_150713_create_usuarios_table.php
+php artisan make:controller API/UsuarioController
 
 
+------------------
+Banco de dados
+Tabela
+*Usuario
+*ExperienciaProfissional(idUsuario)
+*FormacaoAcademica(idUsuario)
 
 ------------------
 
