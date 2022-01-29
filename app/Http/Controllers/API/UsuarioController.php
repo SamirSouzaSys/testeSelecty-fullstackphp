@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-    // all Autor
     public function index()
     {
         $usuarios = Usuario::all()->toArray();
@@ -35,14 +34,12 @@ class UsuarioController extends Controller
         return response()->json('O Usuário foi adicionado com Sucesso');
     }
 
-    // edit autor
     public function edit($id)
     {
         $usuario = Usuario::find($id);
         return response()->json($usuario);
     }
 
-    // update autor
     public function update($id, Request $request)
     {
         $usuario = Usuario::find($id);
@@ -51,7 +48,6 @@ class UsuarioController extends Controller
         return response()->json('O Usuário foi alterado com sucesso');
     }
 
-    // delete autor
     public function delete($id)
     {
         $usuario = Usuario::find($id);

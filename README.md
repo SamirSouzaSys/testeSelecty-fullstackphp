@@ -54,14 +54,35 @@ php artisan make:model Usuario -m
 php artisan migrate --path=/database/migrations/2022_01_29_150713_create_usuarios_table.php
 php artisan make:controller API/UsuarioController
 
+php artisan make:model ExperienciaProfissional -m
+php artisan migrate --path=/database/migrations/2022_01_29_155010_create_experiencia_profissionals_table.php
+php artisan make:controller API/ExperienciaProfissionalController
+
+php artisan make:model FormacaoAcademica -m
+php artisan migrate --path=/database/migrations/2022_01_29_160159_create_formacao_academicas_table.php
+php artisan make:controller API/FormacaoAcademicaController
 
 ------------------
 Banco de dados
-Tabela
+Tabelas
 *Usuario
 *ExperienciaProfissional(idUsuario)
 *FormacaoAcademica(idUsuario)
 
+TelaHome(usuario/index)
+  |-> Botão (usuario/delete)
+  -> Botão -> Tela-Usuário.Editar (usuario/edit/id) -> (usuario/update/id)
+  -> Botão -> Tela-UsuárioDetalhes
+      -> Botão -> Tela-ExperienciasProfissionais.Adicionar -> (experienciaProfissional/add)
+      -> Experiencia Profissionais (experienciaProfissional/index)
+                -> Botão -> Tela-ExperiênciaProfissional.Editar(experienciaProfissional/Edit) -> (experienciaProfissional/update/id)
+                |-> Botão (experienciaProfissional/delete)
+      -> Botão -> Tela-ExperienciasProfissionais.Adicionar -> (formacaoAcademica/add)
+      -> Formação Acadêmica (formacaoAcademica/index)
+                -> Botão -> Tela-FormaçãoAcadêmica.Editar(formacaoAcademica/Edit) -> (formacaoAcademica/id)
+                |-> Botão (formacaoAcademica/delete)
+  
+  -> Botão -> Tela-Usuário.Adicionar -> (usuario/add)
 ------------------
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
