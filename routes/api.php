@@ -24,12 +24,14 @@ use App\Http\Controllers\API\UsuarioController;
 // });
 
 
-Route::get('usuario',              [UsuarioController::class, 'index']);
+Route::get('usuario',                  [UsuarioController::class, 'index']);
 Route::group(['prefix' => 'usuario'], function () {
-    Route::post('add',             [UsuarioController::class, 'add']);
-    Route::get('edit/{id}',        [UsuarioController::class, 'edit']);
-    Route::post('update/{id}',     [UsuarioController::class, 'update']);
-    Route::delete('delete/{id}',   [UsuarioController::class, 'delete']);
+    Route::post('add',                 [UsuarioController::class, 'add']);
+    Route::get('edit/{id}',            [UsuarioController::class, 'edit']);
+    Route::post('update/{id}',         [UsuarioController::class, 'update']);
+    Route::delete('delete/{id}',       [UsuarioController::class, 'delete']);
+    Route::get('formacoes/{id}',      [UsuarioController::class, 'formacoes']);
+    Route::get('experiencias/{id}',   [UsuarioController::class, 'experiencias']);
 });
 
 Route::get('experienciaProfissional', [ExperienciaProfissionalController::class, 'index']);

@@ -1,42 +1,36 @@
 <template>
     <div>
-        <h3 class="text-center">Adicionar Usuário</h3>
+        <h3 class="text-center">Adicionar Formação</h3>
         <div class="row">
             <div class="col-md-12">
-                <form @submit.prevent="addUsuario">
+                <form @submit.prevent="addFormacao">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="form-label">Nome</label>
-                            <input type="text" class="form-control" v-model="usuario.nome">
+                            <label class="form-label">Instituição</label>
+                            <input type="text" class="form-control" v-model="formacao.instituicao">
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="form-label">Email</label>
-                            <input type="text" class="form-control" v-model="usuario.email">
+                            <label class="form-label">Grau</label>
+                            <input type="text" class="form-control" v-model="formacao.grau">
                         </div>
                     </div>
                     <br/>
 
                     <div class="row">
                         <div class="form-group  col-md-6">
-                            <label class="form-label">Telefone</label>
-                            <input type="text" class="form-control" v-model="usuario.telefone">
+                            <label class="form-label">Início</label>
+                            <input type="text" class="form-control" v-model="formacao.inicio">
                         </div>
                         <div class="form-group  col-md-6">
-                            <label class="form-label">Usuario</label>
-                            <input type="text" class="form-control" v-model="usuario.usuario">
+                            <label class="form-label">Fim</label>
+                            <input type="text" class="form-control" v-model="formacao.fim">
                         </div>
                     </div>
                     <br/>
 
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label class="form-label">Senha</label>
-                            <input type="text" class="form-control" v-model="usuario.senha">
-                        </div>
-                        <div class="form-group  col-md-6">
-                            <label class="form-label">Confirme a sua senha</label>
-                            <input type="text" class="form-control">
-                        </div>
+                        <label class="form-label">Descrição</label>
+                        <richtext-component></richtext-component>
                     </div>
                     <br/>
 
@@ -53,16 +47,20 @@
     export default {
         data() {
             return {
-                usuario: {}
+                formacao: {}
             }
         },
+        created() {
+            this.formacao.usuario_id = this.$route.params.id;
+        },
         methods: {
-            addUsuario() {
+            addFormacao() {
+                this.formacao.descricao_richtext = tinymce.activeEditor.getContent();
  
                 this.axios
-                    .post('http://localhost:8000/api/usuario/add', this.usuario)
+                    .post('http://localhost:8000/api/formacaoAcademica/add', this.formacao)
                     .then(response => (
-                        this.$router.push({name: 'home'})
+                        this.$router.push({ name: 'usuario/detalhes', params: { id: this.formacao.usuario_id } })
                         // console.log(response.data)
                     ))
                     .catch(error => console.log(error))
@@ -71,3 +69,4 @@
         }
     }
 </script>
+

@@ -26,7 +26,6 @@ class UsuarioController extends Controller
         }
         return $usuarios;
 
-
         // SELECT *,
         // ( select count(*) FROM `formacao_academicas`
         //     where usuario_id = usuarios.id
@@ -35,7 +34,20 @@ class UsuarioController extends Controller
         //     where usuario_id = usuarios.id
         // ) as ExperienciasTotal
         // FROM `testeSelecty-fullstackphp-DB`.usuarios;
+    }
 
+    public function formacoes($id)
+    {
+        $formacoes = FormacaoAcademica::where('usuario_id',$id)->get();
+        return response()->json($formacoes);
+        // return $formacoes;
+    }
+
+    public function experiencias($id)
+    {
+        $experiencias = ExperienciaProfissional::where('usuario_id',$id)->get();
+        return response()->json($experiencias);
+        // return $formacoes;
     }
 
     // add autor
