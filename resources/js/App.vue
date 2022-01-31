@@ -6,7 +6,7 @@
       <div class="text-center"
         style="margin: 100px 0px 20px 0px"
       >
-        <h1 class="text-secondary">Teste Selecty - Fullstack-PHP</h1>
+        <h1 class="fw-bolder">Teste Selecty - Fullstack-PHP</h1>
       </div>
       <br />
       <router-view></router-view>

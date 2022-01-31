@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h3 class="text-center">Todos Usuários</h3>
-    <h4 class="text-center">Suas Formações e Experiências</h4>
+    <h3 class="text-center fw-bolder">Todos Usuários</h3>
     <br />
     <table class="table table-bordered">
       <thead>
@@ -33,23 +32,27 @@
           <td>{{ usuario.updated_at }}</td>
           <td>
             <div class="btn-group" role="group">
-              <button class="btn btn-danger" @click="deleteUsuario(usuario.id)">
-                Apagar
-              </button>
               <router-link
-                :to="{ name: 'usuario/edit', params: { id: usuario.id } }"
+                :to="{ name: 'usuario/detalhes', params: { id: usuario.id } }"
                 class="btn btn-primary"
               >
                 Detalhes
               </router-link>
+              <router-link
+                :to="{ name: 'usuario/edit', params: { id: usuario.id } }"
+                class="btn btn-warning"
+              >
+                Editar
+              </router-link>
+              <button class="btn btn-danger" @click="deleteUsuario(usuario.id)">
+                Apagar
+              </button>
             </div>
           </td>
         </tr>
       </tbody>
-      <tfoot>
-        * observação - exibida devido a ser um sistema de aprendizado
-      </tfoot>
     </table>
+    * observação - exibida devido a ser um sistema de aprendizado
     <hr />
   </div>
 </template>

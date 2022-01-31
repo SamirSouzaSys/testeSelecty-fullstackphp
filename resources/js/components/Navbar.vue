@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Usuários - Formações e Experiências</a>
+      <a class="navbar-brand fw-bolder" href="#">Usuários - Formações e Experiências</a>
       <button
         class="navbar-toggler collapsed"
         type="button"

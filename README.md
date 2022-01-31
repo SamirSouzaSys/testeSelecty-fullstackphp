@@ -97,18 +97,18 @@ Tabelas
 *FormacaoAcademica(idUsuario)
 
 TelaHome(usuario/index)
-  -> Botão -> Tela-Usuário.Adicionar -> (usuario/add)
-  |-> Botão (usuario/delete)
-  -> Botão -> Tela-Usuário.Editar (usuario/edit/id) -> (usuario/update/id)
-  -> Botão -> Tela-UsuárioDetalhes
-      -> Botão -> Tela-ExperienciasProfissionais.Adicionar -> (experienciaProfissional/add)
-      -> Experiencia Profissionais (experienciaProfissional/index)
-                -> Botão -> Tela-ExperiênciaProfissional.Editar(experienciaProfissional/Edit) -> (experienciaProfissional/update/id)
-                |-> Botão (experienciaProfissional/delete)
-      -> Botão -> Tela-ExperienciasProfissionais.Adicionar -> (formacaoAcademica/add)
-      -> Formação Acadêmica (formacaoAcademica/index)
-                -> Botão -> Tela-FormaçãoAcadêmica.Editar(formacaoAcademica/Edit) -> (formacaoAcademica/id)
-                |-> Botão (formacaoAcademica/delete)
+ -> Botão_OK -> Tela-Usuário.Adicionar_OK -> (usuario/add)_OK
+ |-> Botão (usuario/delete)_OK
+ -> Botão -> Tela-Usuário.Editar (usuario/edit/id) -> (usuario/update/id)_OK
+ -> Botão -> Tela-UsuárioDetalhes_OK
+   -> Botão -> Tela-ExperienciasProfissionais.Adicionar -> (experienciaProfissional/add)
+   -> Experiencia Profissionais (experienciaProfissional/index)
+     -> Botão -> Tela-ExperiênciaProfissional.Editar(experienciaProfissional/Edit) -> (experienciaProfissional/update/id)
+     |-> Botão (experienciaProfissional/delete)
+  -> Botão -> Tela-ExperienciasProfissionais.Adicionar -> (formacaoAcademica/add)
+  -> Formação Acadêmica (formacaoAcademica/index)
+     -> Botão -> Tela-FormaçãoAcadêmica.Editar(formacaoAcademica/Edit) -> (formacaoAcademica/id)
+     |-> Botão (formacaoAcademica/delete)
   
 ------------------
 Back

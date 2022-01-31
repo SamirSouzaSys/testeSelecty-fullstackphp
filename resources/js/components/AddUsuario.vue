@@ -1,42 +1,42 @@
 <template>
     <div>
-        <h3 class="text-center">Adicionar Usuário</h3>
+        <h3 class="text-center fw-bolder">Adicionar Usuário</h3>
         <div class="row">
             <div class="col-md-12">
                 <form @submit.prevent="addUsuario">
-                    <div class="form-group">
-                        <label class="form-label">Nome</label>
-                        <input type="text" class="form-control" v-model="usuario.nome">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control" v-model="usuario.nome">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" v-model="usuario.email">
+                        </div>
                     </div>
                     <br/>
 
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="text" class="form-control" v-model="usuario.email">
+                    <div class="row">
+                        <div class="form-group  col-md-6">
+                            <label class="form-label">Telefone</label>
+                            <input type="text" class="form-control" v-model="usuario.telefone">
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label class="form-label">Usuario</label>
+                            <input type="text" class="form-control" v-model="usuario.usuario">
+                        </div>
                     </div>
                     <br/>
 
-                    <div class="form-group">
-                        <label class="form-label">Telefone</label>
-                        <input type="text" class="form-control" v-model="usuario.telefone">
-                    </div>
-                    <br/>
-
-                    <div class="form-group">
-                        <label class="form-label">Usuario</label>
-                        <input type="text" class="form-control" v-model="usuario.usuario">
-                    </div>
-                    <br/>
-
-                    <div class="form-group">
-                        <label class="form-label">Senha</label>
-                        <input type="text" class="form-control" v-model="usuario.senha">
-                    </div>
-                    <br/>
-
-                    <div class="form-group">
-                        <label class="form-label">Confirme a sua senha</label>
-                        <input type="text" class="form-control">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="form-label">Senha</label>
+                            <input type="text" class="form-control" v-model="usuario.senha">
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label class="form-label">Confirme a sua senha</label>
+                            <input type="text" class="form-control">
+                        </div>
                     </div>
                     <br/>
 
