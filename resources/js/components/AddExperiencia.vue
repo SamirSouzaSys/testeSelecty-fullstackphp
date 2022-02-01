@@ -1,48 +1,42 @@
 <template>
     <div>
-        <h3 class="text-center">Adicionar Usuário</h3>
+        <h3 class="text-center">Adicionar Experiência</h3>
         <div class="row">
             <div class="col-md-12">
-                <form @submit.prevent="addUsuario">
+                <form @submit.prevent="addExperiencia">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label class="form-label">Nome</label>
-                            <input type="text" class="form-control" v-model="usuario.nome">
+                            <label class="form-label">Instituição</label>
+                            <input type="text" class="form-control" v-model="experiencia.instituicao">
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="form-label">Email</label>
-                            <input type="text" class="form-control" v-model="usuario.email">
+                            <label class="form-label">Cargo</label>
+                            <input type="text" class="form-control" v-model="experiencia.cargo">
                         </div>
                     </div>
                     <br/>
 
                     <div class="row">
                         <div class="form-group  col-md-6">
-                            <label class="form-label">Telefone</label>
-                            <input type="text" class="form-control" v-model="usuario.telefone">
+                            <label class="form-label">Início</label>
+                            <input type="text" class="form-control" v-model="experiencia.inicio">
                         </div>
                         <div class="form-group  col-md-6">
-                            <label class="form-label">Usuario</label>
-                            <input type="text" class="form-control" v-model="usuario.usuario">
+                            <label class="form-label">Fim</label>
+                            <input type="text" class="form-control" v-model="experiencia.fim">
                         </div>
                     </div>
                     <br/>
 
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label class="form-label">Senha</label>
-                            <input type="text" class="form-control" v-model="usuario.senha">
-                        </div>
-                        <div class="form-group  col-md-6">
-                            <label class="form-label">Confirme a sua senha</label>
-                            <input type="text" class="form-control">
-                        </div>
+                        <label class="form-label">Descrição</label>
+                        <richtext-component></richtext-component>
                     </div>
                     <br/>
 
                     
 
-                    <button type="submit" class="btn btn-primary">Adicionar Usuário</button>
+                    <button type="submit" class="btn btn-primary">Adicionar Experiência</button>
                 </form>
             </div>
         </div>
@@ -53,16 +47,20 @@
     export default {
         data() {
             return {
-                usuario: {}
+                experiencia: {}
             }
         },
+        created() {
+            this.experiencia.usuario_id = this.$route.params.id;
+        },
         methods: {
-            addUsuario() {
+            addExperiencia() {
+                this.experiencia.descricao_richtext = tinymce.activeEditor.getContent();
  
                 this.axios
-                    .post('http://localhost:8000/api/usuario/add', this.usuario)
+                    .post('http://localhost:8000/api/experienciaProfissional/add', this.experiencia)
                     .then(response => (
-                        this.$router.push({name: 'home'})
+                        this.$router.push({ name: 'usuario/detalhes', params: { id: this.experiencia.usuario_id } })
                         // console.log(response.data)
                     ))
                     .catch(error => console.log(error))
@@ -71,3 +69,4 @@
         }
     }
 </script>
+

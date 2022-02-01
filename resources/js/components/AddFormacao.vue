@@ -36,7 +36,7 @@
 
                     
 
-                    <button type="submit" class="btn btn-primary">Adicionar Usuário</button>
+                    <button type="submit" class="btn btn-primary">Adicionar Formação</button>
                 </form>
             </div>
         </div>

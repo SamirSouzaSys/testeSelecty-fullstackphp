@@ -20,7 +20,7 @@ class CreateExperienciaProfissionalsTable extends Migration
             $table->date('inicio');
             $table->date('fim');
             $table->text('descricao_richtext');
-            $table->foreignId('usuario_id')->constrained('usuarios');
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

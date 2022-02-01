@@ -191,8 +191,8 @@ export default {
   data() {
     return {
       usuario: {},
-      experiencias: {},
       formacoes: {},
+      experiencias: {},
     };
   },
   created() {
@@ -216,6 +216,23 @@ export default {
         this.experiencias = response.data;
     });
   },
-  methods: {},
+  methods: {
+    deleteFormacao(id) {
+      this.axios
+        .delete(`http://localhost:8000/api/formacaoAcademica/delete/${id}`)
+        .then((response) => {
+          let i = this.formacoes.map((item) => item.id).indexOf(id); // find index of your object
+          this.formacoes.splice(i, 1);
+        });
+    },
+    deleteExperiencia(id) {
+      this.axios
+        .delete(`http://localhost:8000/api/experienciaProfissional/delete/${id}`)
+        .then((response) => {
+          let i = this.experiencias.map((item) => item.id).indexOf(id); // find index of your object
+          this.experiencias.splice(i, 1);
+        });
+    },
+  },
 };
 </script>
