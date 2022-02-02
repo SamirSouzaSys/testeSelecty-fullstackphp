@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bolder" href="#">Usuários - Formações e Experiências</a>
+      <!-- <a class="navbar-brand fw-bolder" href="#">Usuários - Formações e Experiências</a> -->
+                  <router-link to="/" class="navbar-brand fw-bolder">Usuários - Formações e Experiências</router-link>
       <button
         class="navbar-toggler collapsed"
         type="button"
@@ -16,10 +17,10 @@
       <div class="navbar-collapse collapse" id="navbarCollapse" style="">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <router-link to="/" class="nav-item nav-link">Home</router-link>
+            <router-link to="/" class="nav-item nav-link fw-bolder">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/usuario/add" class="nav-item nav-link">Add Usuário</router-link>
+            <router-link to="/usuario/add" class="nav-item nav-link fw-bolder">Adicionar Usuário</router-link>
           </li>
         </ul>
         <form class="d-flex">
